@@ -73,7 +73,7 @@ function obj = map_objective(x, y, landmarks, measurements, sigma_r, sigma_x, si
     likelihood_term = 0;
     for i = 1:k
         d_pred = norm([x; y] - landmarks(:, i));
-        likelihood_term = f + ((measurements(i) - d_pred)^2) / (2 * sigma_r^2);
+        likelihood_term = likelihood_term + ((measurements(i) - d_pred)^2) / (2 * sigma_r^2);
     end
     
     % prior term
